@@ -5,9 +5,9 @@
   "type": "object",
   "description": "Schema of a Span Event",
   "required": [
-    "traceId",
-    "spanId",
-    "parentId",
+    "trace_id",
+    "span_id",
+    "parent_id",
     "resource",
     "name",
     "service",
@@ -19,17 +19,17 @@
     "metrics"
   ],
   "properties": {
-    "traceId": {
+    "trace_id": {
       "type": "string",
       "description": "The id of the trace this Span belongs to",
       "readOnly": true
     },
-    "spanId": {
+    "span_id": {
       "type": "string",
       "description": "The unique id of this Span",
       "readOnly": true
     },
-    "parentId": {
+    "parent_id": {
       "type": "string",
       "description": "The id of the parent Span in this trace",
       "readOnly": true
@@ -156,11 +156,16 @@
             "client": {
               "type": "object",
               "properties": {
-                "sim_carrier_id": {
-                  "type": "string"
-                },
-                "sim_carrier_name": {
-                  "type": "string"
+                "sim_carrier": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  }
                 },
                 "signal_strength": {
                   "type": "string"
@@ -178,7 +183,8 @@
                 }
               },
               "required": [
-                "connectivity"
+                "connectivity",
+                "sim_carrier"
               ]
             }
           },

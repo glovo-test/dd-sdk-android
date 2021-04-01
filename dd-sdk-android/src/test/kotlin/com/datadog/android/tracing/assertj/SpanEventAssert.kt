@@ -214,18 +214,18 @@ internal class SpanEventAssert(actual: SpanEvent) :
                     "instead was: ${actual.meta.network.client.signalStrength}"
             )
             .isEqualTo(networkInfo.strength.toStringOrNull())
-        assertThat(actual.meta.network.client.simCarrierId)
+        assertThat(actual.meta.network.client.simCarrier.id)
             .overridingErrorMessage(
                 "Expected SpanEvent to have carrier id: " +
                     "${networkInfo.carrierId.toStringOrNull()} but " +
-                    "instead was: ${actual.meta.network.client.simCarrierId}"
+                    "instead was: ${actual.meta.network.client.simCarrier.id}"
             )
             .isEqualTo(networkInfo.carrierId.toStringOrNull())
-        assertThat(actual.meta.network.client.simCarrierName)
+        assertThat(actual.meta.network.client.simCarrier.name)
             .overridingErrorMessage(
                 "Expected SpanEvent to have carrier name: " +
                     "${networkInfo.carrierName} but " +
-                    "instead was: ${actual.meta.network.client.simCarrierName}"
+                    "instead was: ${actual.meta.network.client.simCarrier.name}"
             )
             .isEqualTo(networkInfo.carrierName)
         return this
