@@ -55,14 +55,14 @@ internal class LegacyToSpanEventMapper(
     private fun resolveMeta(event: DDSpan): SpanEvent.Meta {
         val networkInfo = networkInfoProvider.getLatestNetworkInfo()
         val simCarrier = SpanEvent.SimCarrier(
-            id = networkInfo.carrierId.toStringOrNull(),
+            id = networkInfo.carrierId.stringOrNullIfSmaller(),
             name = networkInfo.carrierName
         )
         val networkInfoClient = SpanEvent.Client(
             simCarrier = simCarrier,
-            signalStrength = networkInfo.strength.toStringOrNull(),
-            downlinkKbps = networkInfo.downKbps.toStringOrNull(),
-            uplinkKbps = networkInfo.upKbps.toStringOrNull(),
+            signalStrength = networkInfo.strength.stringOrNullIfSmaller(Int.MIN_VALUE),
+            downlinkKbps = networkInfo.downKbps.stringOrNullIfSmaller(),
+            uplinkKbps = networkInfo.upKbps.stringOrNullIfSmaller(),
             connectivity = networkInfo.connectivity.toString()
         )
         val networkInfoMeta = SpanEvent.Network(networkInfoClient)
@@ -86,8 +86,8 @@ internal class LegacyToSpanEventMapper(
         )
     }
 
-    private fun Long?.toStringOrNull(): String? {
-        return if (this != null && this > 0) this.toString() else null
+    private fun Long?.stringOrNullIfSmaller(threshold: Int = 0): String? {
+        return if (this != null && this > threshold) this.toString() else null
     }
 
     // endregion

@@ -406,7 +406,7 @@ class JsonObjectAssert(actual: JsonObject) :
         val element = actual.get(name)
         assertThat(element is JsonPrimitive && element.isNumber)
             .overridingErrorMessage(
-                "Expected json object to have field $name with BigInteger value " +
+                "Expected json object to have field $name with Number value " +
                     "but was ${element.javaClass.simpleName}"
             )
             .isTrue()
