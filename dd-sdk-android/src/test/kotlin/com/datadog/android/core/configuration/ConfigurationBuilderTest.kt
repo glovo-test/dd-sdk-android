@@ -1427,7 +1427,7 @@ internal class ConfigurationBuilderTest {
         assertThat(config.coreConfig).isEqualTo(Configuration.DEFAULT_CORE_CONFIG)
         assertThat(config.logsConfig).isEqualTo(Configuration.DEFAULT_LOGS_CONFIG)
         assertThat(config.rumConfig).isEqualTo(Configuration.DEFAULT_RUM_CONFIG)
-        assertThat(config.tracesConfig!!).isEqualTo(
+        assertThat(config.tracesConfig).isEqualTo(
             Configuration.DEFAULT_TRACING_CONFIG.copy(
                 spanEventMapper = eventMapper
             )
