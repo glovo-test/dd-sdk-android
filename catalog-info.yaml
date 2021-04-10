@@ -5,6 +5,10 @@ metadata:
   description: Datadog SDK for Android
   annotations:
     github.com/project-slug: glovo-test/dd-sdk-android
+  tags:
+    - mobile
+    - android
+    - datadog
 spec:
   type: library
   lifecycle: experimental
