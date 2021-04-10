@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: dd-sdk-android
+  annotations:
+    github.com/project-slug: glovo-test/dd-sdk-android
+spec:
+  type: other
+  lifecycle: unknown
+  owner: android
