@@ -2,7 +2,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: dd-sdk-android
-  name: Datadog SDK for Android
+  description: Datadog SDK for Android
   annotations:
     github.com/project-slug: glovo-test/dd-sdk-android
 spec:
