@@ -6,7 +6,7 @@ metadata:
   annotations:
     github.com/project-slug: glovo-test/dd-sdk-android
     snyk.io/org-name: glovo-test
-    snyk.io/project-ids: 06c971fa-d2c5-408c-bb2f-ffae77e53807
+    snyk.io/project-ids: 0d5f892f-1098-460f-86a2-7ef9e2d86e8c
   tags:
     - mobile
     - android
