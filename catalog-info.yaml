@@ -5,6 +5,8 @@ metadata:
   description: Datadog SDK for Android
   annotations:
     github.com/project-slug: glovo-test/dd-sdk-android
+    snyk.io/org-name: glovo-test
+    snyk.io/project-ids: 06c971fa-d2c5-408c-bb2f-ffae77e53807
   tags:
     - mobile
     - android
